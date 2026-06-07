@@ -18,11 +18,11 @@ zamanlı sistem değerlendirmesi.
 
 ```
                 ┌────────────────┐
-  creditcard.csv│  Eğitim Boru   │   models/  (model.pkl, scaler.pkl,
-  ─────────────▶│  Hattı (src/)  │──────────▶ explainer.pkl, metrics.json,
-                │  train.py      │            test_ornegi.csv)
+  creditcard.csv│  Eğitim        │   models/  (model.pkl, scaler.pkl,
+  ─────────────▶│  Pipeline      │──────────▶ explainer.pkl, metrics.json,
+                │  (src/train.py)│            test_ornegi.csv)
                 └────────────────┘
-                                              │ (artefaktları yükler)
+                                              │ (artifact'ları yükler)
                                               ▼
   HTTP istek    ┌────────────────┐   skorla   ┌────────────────┐
   ─────────────▶│  FastAPI       │───────────▶│  Servis        │
@@ -42,7 +42,7 @@ zamanlı sistem değerlendirmesi.
 | Veri | Okuma + eğitim/test bölme | `src/data_loader.py` |
 | Ön işleme | RobustScaler (Time, Amount) | `src/preprocess.py` |
 | Dengesizlik | class_weight / SMOTE / undersample | `src/resampling.py` |
-| Eğitim | XGBoost + artefakt kaydı | `src/train.py` |
+| Eğitim | XGBoost + artifact kaydı | `src/train.py` |
 | Değerlendirme | AUC-PR, F1, eşik analizi | `src/evaluate.py` |
 | Açıklanabilirlik | SHAP TreeExplainer | `src/explain.py` |
 | API | `/health`, `/predict`, `/predict/batch` | `api/main.py`, `api/service.py` |
@@ -166,12 +166,12 @@ proje/
 ├── config.yaml              # Tüm ayarlar
 ├── requirements.txt
 ├── Dockerfile / docker-compose.yml
-├── src/                     # Çekirdek ML boru hattı
+├── src/                     # Çekirdek ML pipeline
 ├── api/                     # FastAPI skorlama servisi
 ├── dashboard/               # Streamlit panel
 ├── scripts/                 # Panel görselleri ve karşılaştırma betikleri
 ├── tests/                   # pytest (sentetik veri)
 ├── reports/                 # Üretilen görseller (figures/)
 ├── data/                    # creditcard.csv (gitignore)
-└── models/                  # Eğitilmiş artefaktlar (gitignore)
+└── models/                  # Eğitilmiş artifact'lar (gitignore)
 ```
