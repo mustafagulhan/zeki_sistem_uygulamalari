@@ -2,7 +2,7 @@
 
 ## Anlatım Videosu
 
-[<img src="[https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg](https://drive.google.com/file/d/1EvY5LAV89mq9QcqEAuSh5-h4mPMMD7eJ/view?usp=sharing)" width="50%">]([https://www.youtube.com/watch?v=Hc79sDi3f0U](https://drive.google.com/file/d/1EvY5LAV89mq9QcqEAuSh5-h4mPMMD7eJ/view?usp=sharing))
+[![Demo Videosu](https://drive.google.com/thumbnail?id=1EvY5LAV89mq9QcqEAuSh5-h4mPMMD7eJ&sz=w1000)](https://drive.google.com/file/d/1EvY5LAV89mq9QcqEAuSh5-h4mPMMD7eJ/view?usp=sharing)
 
 
 **Zeki Sistem Uygulamaları – Final Projesi**
