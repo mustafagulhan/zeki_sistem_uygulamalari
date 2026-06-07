@@ -1,0 +1,26 @@
+# Çekirdek veri/ML
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.1
+imbalanced-learn==0.12.3
+xgboost==2.1.1
+shap==0.46.0
+joblib==1.4.2
+
+# Konfigürasyon ve şema
+pydantic==2.8.2
+pydantic-settings==2.4.0
+PyYAML==6.0.2
+
+# API
+fastapi==0.112.2
+uvicorn[standard]==0.30.6
+httpx==0.27.2
+
+# Demo paneli
+streamlit==1.38.0
+matplotlib==3.9.2
+plotly==5.24.0
+
+# Test
+pytest==8.3.2

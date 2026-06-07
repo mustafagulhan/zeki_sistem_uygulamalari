@@ -1,0 +1,25 @@
+# Veri ve model artefaktları (repoya yüklenmez)
+data/
+models/
+*.pkl
+*.joblib
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Ortam / IDE
+.env
+.vscode/
+.idea/
+.DS_Store
+
+# Çıktılar
+*.log
+# Not: reports/figures/*.png repoya dahil edilir (panelde kullanılan görseller).

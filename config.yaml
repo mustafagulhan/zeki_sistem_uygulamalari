@@ -1,0 +1,53 @@
+# Gerçek Zamanlı Kredi Kartı Dolandırıcılık Tespit Sistemi - Konfigürasyon
+# Tüm yollar proje kök dizinine görelidir.
+
+veri:
+  csv_yolu: "data/creditcard.csv"
+  hedef_kolon: "Class"           # 0 = normal, 1 = dolandırıcılık
+  test_orani: 0.2
+  rastgele_tohum: 42
+  # Zamana dayalı bölme: işlemler "Time" kolonuna göre sıralanıp sondan test ayrılır.
+  # False ise stratified rastgele bölme kullanılır.
+  zaman_sirali_bolme: true
+
+onisleme:
+  # RobustScaler ile ölçeklenecek kolonlar (V1-V28 zaten PCA çıktısı, ölçekli kabul edilir).
+  olceklenecek_kolonlar: ["Time", "Amount"]
+
+dengesizlik:
+  # Seçenekler: "class_weight" | "smote" | "undersample" | "none"
+  strateji: "class_weight"
+  smote_komsu_k: 5
+
+model:
+  # XGBoost hiperparametreleri
+  n_estimators: 400
+  max_depth: 6
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  rastgele_tohum: 42
+
+kalibrasyon:
+  # XGBoost gibi boosting modelleri olasılıkları 0/1 uçlarına iter (overconfident).
+  # Kalibrasyon, olasılıkları gerçek frekanslara yaklaştırır (anlamlı ara değerler).
+  etkin: true
+  yontem: "isotonic"   # isotonic (büyük veri) | sigmoid (Platt, küçük veri)
+  cv: 3                 # çapraz doğrulama kat sayısı
+
+esik:
+  # Karar eşiği. Maliyet-duyarlı: yanlış negatif (kaçan dolandırıcılık) genelde daha pahalı.
+  varsayilan: 0.5
+  # Eşik taramasında F1'i en iyileyen değer de raporlanır.
+  f1_optimize: true
+
+cikti:
+  model_dizini: "models"
+  model_dosyasi: "model.pkl"
+  scaler_dosyasi: "scaler.pkl"
+  explainer_dosyasi: "explainer.pkl"
+  metrik_dosyasi: "metrics.json"
+
+api:
+  baslik: "Dolandırıcılık Tespit API"
+  top_shap_ozellik: 6          # /predict yanıtında döndürülecek en etkili özellik sayısı

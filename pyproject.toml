@@ -1,0 +1,13 @@
+[tool.pytest.ini_options]
+# Testler proje kökünden çalıştırılır; src/ ve api/ paketleri import edilebilsin.
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+# E501 (satır uzunluğu) yok sayılır: kaynakça ve tablo verileri doğal olarak uzun.
+ignore = ["E501"]

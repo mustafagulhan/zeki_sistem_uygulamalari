@@ -1,0 +1,23 @@
+services:
+  api:
+    build: .
+    container_name: fraud-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models   # eğitilmiş artefaktlar paylaşılır
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+
+  dashboard:
+    build: .
+    container_name: fraud-dashboard
+    ports:
+      - "8501:8501"
+    environment:
+      # Panel, API'ye servis adıyla ulaşır (compose ağı içinde).
+      FRAUD_API_URL: "http://api:8000"
+    volumes:
+      - ./models:/app/models
+    depends_on:
+      - api
+    command: streamlit run dashboard/app.py --server.address 0.0.0.0 --server.port 8501
