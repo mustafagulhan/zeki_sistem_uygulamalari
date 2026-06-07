@@ -1,5 +1,10 @@
 # 🛡️ Gerçek Zamanlı Kredi Kartı Dolandırıcılık Tespit Sistemi
 
+## Anlatım Videosu
+
+[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">]([https://www.youtube.com/watch?v=Hc79sDi3f0U](https://drive.google.com/file/d/1EvY5LAV89mq9QcqEAuSh5-h4mPMMD7eJ/view?usp=sharing))
+
+
 **Zeki Sistem Uygulamaları – Final Projesi**
 MAKÜ Yazılım Mühendisliği Anabilim Dalı, Yüksek Lisans
 Danışman: Prof. Dr. Serkan BALLI · Geliştiren: Mustafa GÜLHAN
